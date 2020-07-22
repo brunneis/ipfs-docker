@@ -1,0 +1,19 @@
+version: '3.4'
+
+x-logging: &default-logging
+  options:
+    max-size: "10M"
+    max-file: "10"
+  driver: json-file
+
+services:
+  ipfs-server:
+    image: brunneis/ipfs
+    ports:
+      - 4001:4001
+      - 8080:8080
+      - 5001:5001
+    volumes:
+      - ./data:/root/.ipfs
+    logging: *default-logging
+
