@@ -1,4 +1,4 @@
-version: '3.4'
+version: "3.5"
 
 x-logging: &default-logging
   options:
@@ -15,5 +15,6 @@ services:
       - 5001:5001
     volumes:
       - ./data:/root/.ipfs
+      - ./entrypoint.sh:/opt/ipfs/default/bin/entrypoint.sh:ro
     logging: *default-logging
     restart: always
