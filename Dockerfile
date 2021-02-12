@@ -11,7 +11,6 @@ RUN \
   && apt-get -y upgrade \
   && apt-get -y install \
      wget \
-  && mkdir /opt/cbxchain \
   && wget $IPFS_ARCHIVE_URL \
   && mkdir -p $IPFS_INSTALL_DIR \
   && tar xvf $IPFS_ARCHIVE -C $IPFS_INSTALL_DIR \
